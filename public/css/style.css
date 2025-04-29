@@ -1,0 +1,124 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.chat-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 80vh;
+    margin: 2rem auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 1rem;
+    border-radius: 15px 15px 0 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 20px;
+    border-radius: 20px;
+    margin: 5px 0;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.user-message {
+    background: #e3f2fd;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background: #f5f5f5;
+    align-self: flex-start;
+    position: relative;
+}
+
+.bot-message::before {
+    content: "🩺";
+    position: absolute;
+    left: -35px;
+    top: 0;
+    font-size: 1.5rem;
+}
+
+.input-area {
+    border-top: 1px solid #eee;
+    padding: 15px;
+}
+
+.input-field {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.input-field input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.send-btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+}
+
+.response-item {
+    margin: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.response-item::before {
+    content: "•";
+    color: teal;
+    position: absolute;
+    left: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .chat-container {
+        height: 90vh;
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+}
